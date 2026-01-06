@@ -16,6 +16,12 @@ namespace MySqlDumpApp
             InitializeComponent();
         }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDump_Click(object sender, EventArgs e)
         {
             string server = txtDumpServer.Text;
@@ -64,6 +70,12 @@ namespace MySqlDumpApp
             }
         }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnloadDb_Click(object sender, EventArgs e)
         {
             string connectionString = $"Server={txtBackupServer.Text};Port={txtBackupPort.Text};Uid={txtBackupUsername.Text};Pwd={txtBackupPassword.Text};";
@@ -84,11 +96,23 @@ namespace MySqlDumpApp
                 }
             }
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void comboBoxDatabases_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedDatabase = comboBoxDatabases.SelectedItem.ToString();
             LoadDatabaseObjects(selectedDatabase);
         }
+
+
+        /// <summary>
+        /// /// Load tables and stored procedures for the selected database
+        /// </summary>
+        /// <param name="database"></param>
         private void LoadDatabaseObjects(string database)
         {
             string connectionString = $"Server={txtBackupServer.Text};Port={txtBackupPort.Text};Database={database};Uid={txtBackupUsername.Text};Pwd={txtBackupPassword.Text};";
@@ -125,6 +149,14 @@ namespace MySqlDumpApp
                 }
             }
         }
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBackup_Click(object sender, EventArgs e)
         {
             
@@ -182,6 +214,15 @@ namespace MySqlDumpApp
 
 
 
+        /// <summary>
+        /// Handles the click event for the Restore button.
+        /// </summary>
+        /// <param name="server"></param>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <param name="database"></param>
+        /// <param name="tables"></param>
+
         public void BackupDatabase(string server, string username, string password, string database, string tables)
         {
             // Create the backup file name with the current date
@@ -226,6 +267,12 @@ namespace MySqlDumpApp
                 }
             }
         }
+
+
+        /// <summary>
+        /// / Find the path to mysqldump.exe from the registry
+        /// </summary>
+        /// <returns></returns>
         private string FindMysqldumpPath()
         {
             string[] registryPaths = new string[]
@@ -265,6 +312,12 @@ namespace MySqlDumpApp
             return null; // Return null if not found
         }
 
+
+        /// <summary>
+        /// Handles the click event for the Restore button.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRestore_Click(object sender, EventArgs e)
         {
             string server = txtRestoreServer.Text;
