@@ -22,7 +22,6 @@ MySqlAuto is a simple utility designed to help developers **take backups and res
 - JavaScript (as per repository usage)
 
 ---
-
 ## 📥 Installation
 
 Clone the repository:
