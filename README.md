@@ -1,4 +1,4 @@
-# 📦 MySqlAuto
+# 📦MySqlAuto
 
 **Automated MySQL Backup & Restore Tool**
 
@@ -15,11 +15,11 @@ MySqlAuto is a simple utility designed to help developers **take backups and res
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️Tech Stack
 
 - MySQL  
 - .NET / Scripts  
-- JavaScript (as per repository usage)
+- JavaScript (as per repository usage) only...
 
 ---
 ## 📥 Installation
